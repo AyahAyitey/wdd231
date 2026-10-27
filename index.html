@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Ayah Ayitey's WDD 231 course home page, featuring a student introduction and a dynamic Web and Computer Programming course list."
+    >
+    <meta name="author" content="Ayah Ayitey">
+    <meta name="theme-color" content="#183c32">
+    <title>Home | Ayah Ayitey</title>
+    <link rel="icon" href="images/site-logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ayah Ayitey home">
+        <img src="images/site-logo.svg" alt="" width="44" height="44">
+        <span>Ayah Ayitey</span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+      <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="chamber/">Chamber</a></li>
+          <li><a href="final/">Final</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <h1>Home</h1>
+
+      <div class="intro-grid">
+        <section class="panel about-panel" aria-labelledby="about-heading">
+          <h2 id="about-heading">About Me</h2>
+          <div class="panel-body">
+            <p>
+              Hello! I’m Ayah, a student from Accra, Ghana, building my skills in
+              web development and programming. I enjoy learning how thoughtful
+              design and useful technology can make the web work better for
+              everyone.
+            </p>
+            <p>
+              This page is my WDD 231 course home. It brings together a little
+              about me and the courses I’m taking in the Web and Computer
+              Programming certificate.
+            </p>
+          </div>
+        </section>
+
+        <section class="panel photo-panel" aria-labelledby="photo-heading">
+          <h2 id="photo-heading">Student Photo</h2>
+          <figure class="profile-figure">
+            <img
+              src="images/AYAH%20AYITEY%20PHOTO.jpg"
+              alt="Ayah Ayitey"
+              width="377"
+              height="375"
+            >
+            <figcaption>Accra, Ghana</figcaption>
+          </figure>
+        </section>
+      </div>
+
+      <section class="panel certificate-panel" aria-labelledby="certificate-heading">
+        <h2 id="certificate-heading">Web and Computer Programming Certificate</h2>
+        <div class="course-filters" role="group" aria-label="Filter courses">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+            All Courses
+          </button>
+          <button class="filter-button" type="button" data-filter="WDD" aria-pressed="false">
+            WDD Courses
+          </button>
+          <button class="filter-button" type="button" data-filter="CSE" aria-pressed="false">
+            CSE Courses
+          </button>
+        </div>
+        <p class="credit-total" id="credit-total" aria-live="polite"></p>
+        <div class="course-list" id="course-list" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="social-links" aria-label="Social and contact links">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub (update with your repository)">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ayah-ayitey-7760271aa/" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+          YouTube
+        </a>
+      </div>
+      <p class="copyright">
+        &copy; <span id="currentyear"></span> Ayah Ayitey <span aria-hidden="true">·</span> Accra, Ghana
+      </p>
+      <p class="modified">Last modified: <span id="lastModified"></span></p>
+    </footer>
+  </body>
+</html>
