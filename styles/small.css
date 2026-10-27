@@ -1,0 +1,345 @@
+:root {
+  color-scheme: light;
+  --color-ink: #1d2b26;
+  --color-muted: #52635b;
+  --color-page: #f3f5f1;
+  --color-panel: #ffffff;
+  --color-brand: #183c32;
+  --color-brand-dark: #102b24;
+  --color-accent: #f2c65d;
+  --color-border: #d7ded8;
+  --color-complete: #e4f2e9;
+  --color-complete-border: #39805a;
+  --shadow-panel: 0 0.4rem 1.2rem rgb(24 60 50 / 8%);
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.site-header {
+  position: relative;
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-brand);
+  color: #ffffff;
+}
+
+.brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.7rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.menu-toggle {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  place-content: center;
+  gap: 0.3rem;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.menu-toggle__line {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.primary-navigation {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  padding: 0.35rem 1rem 1rem;
+  background: var(--color-brand);
+}
+
+.primary-navigation.is-open {
+  display: block;
+}
+
+.primary-navigation ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-navigation a {
+  display: block;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a[aria-current="page"] {
+  background: var(--color-accent);
+  color: var(--color-brand-dark);
+}
+
+.page-content {
+  width: min(100% - 2rem, 72rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+}
+
+h1,
+h2,
+p,
+figure {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: var(--color-brand-dark);
+  font-size: clamp(1.8rem, 7vw, 2.35rem);
+  line-height: 1.2;
+}
+
+h2 {
+  margin-bottom: 0;
+  padding: 0.75rem 1rem;
+  background: var(--color-brand);
+  color: #ffffff;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.intro-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 0.7rem;
+  background: var(--color-panel);
+  box-shadow: var(--shadow-panel);
+}
+
+.panel-body {
+  padding: 1.1rem 1.2rem 0.25rem;
+}
+
+.panel-body p:last-child {
+  margin-bottom: 1rem;
+}
+
+.profile-figure {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.profile-figure img {
+  display: block;
+  width: min(100%, 20rem);
+  height: auto;
+  border-radius: 0.45rem;
+}
+
+.profile-figure figcaption {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.certificate-panel {
+  padding-bottom: 1.1rem;
+}
+
+.certificate-panel > h2 {
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+}
+
+.course-filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 1rem 0.9rem 0.25rem;
+}
+
+.filter-button {
+  min-height: 2.8rem;
+  padding: 0.45rem 0.35rem;
+  border: 1px solid var(--color-brand);
+  border-radius: 0.45rem;
+  background: #ffffff;
+  color: var(--color-brand-dark);
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.filter-button:hover,
+.filter-button.is-active {
+  background: var(--color-brand);
+  color: #ffffff;
+}
+
+.credit-total {
+  margin: 0;
+  padding: 0.7rem 1rem;
+  color: var(--color-muted);
+  font-weight: 700;
+  text-align: center;
+}
+
+.course-list {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0 0.9rem;
+}
+
+.course-card {
+  display: grid;
+  min-height: 5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-left: 0.35rem solid var(--color-brand);
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+
+.course-card.is-complete {
+  border-color: var(--color-complete-border);
+  border-left-width: 0.35rem;
+  background: var(--color-complete);
+}
+
+.course-card__name {
+  min-width: 0;
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.course-card__credits {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.course-card__status {
+  grid-column: 1 / -1;
+  color: var(--color-brand-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.site-footer {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  padding: 1.5rem 1rem;
+  background: var(--color-brand);
+  color: #ffffff;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.social-links a:hover {
+  background: var(--color-accent);
+  color: var(--color-brand-dark);
+}
+
+.copyright,
+.modified {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.modified {
+  color: #e3ebe5;
+  font-size: 0.82rem;
+}
