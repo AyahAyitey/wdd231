@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accra Chamber of Commerce</title>
+  <meta name="description" content="Connect with local businesses and learn about the Accra Chamber of Commerce.">
+  <meta name="author" content="Ayah Ayitey">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Accra Chamber of Commerce">
+  <meta property="og:description" content="Connect with local businesses and learn about the Accra Chamber of Commerce.">
+  <meta property="og:url" content="https://ayahayitey.github.io/wdd231/chamber/index.html">
+  <meta property="og:image" content="https://ayahayitey.github.io/wdd231/chamber/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <script src="scripts/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand-name">Accra Chamber of Commerce<span class="brand-tag">Growing business together</span></span>
+      </a>
+      <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </div>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-intro">
+      <h1>Growing business together</h1>
+      <p>Discover local businesses, build connections, and explore opportunities with the Accra Chamber of Commerce.</p>
+      <div class="page-actions">
+        <a class="action-link" href="directory.html">Browse the member directory</a>
+        <a class="action-link secondary-action" href="join.html">Explore membership</a>
+      </div>
+    </section>
+    <section class="info-grid" aria-label="Explore the chamber">
+      <article class="info-card">
+        <h2>Find a local business</h2>
+        <p>Browse member businesses in Accra and find contact information for services, shops, and local organizations.</p>
+        <a href="directory.html">Visit the member directory</a>
+      </article>
+      <article class="info-card">
+        <h2>Build your connections</h2>
+        <p>Learn how chamber membership can help you connect with Accra's business community.</p>
+        <a href="join.html">Learn about joining</a>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2>Contact us</h2>
+        <address>
+          <p>Accra Chamber of Commerce<br>1 Independence Avenue, Accra, Ghana</p>
+          <p><a href="tel:+233302000000">+233 30 200 0000</a></p>
+          <p><a href="mailto:info@accrachamber.example">info@accrachamber.example</a></p>
+        </address>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <p><a href="directory.html">Member directory</a></p>
+        <p><a href="join.html">Membership</a></p>
+        <p><a href="discover.html">Discover Accra</a></p>
+      </div>
+      <div>
+        <h2>About this site</h2>
+        <p>&copy; <span id="year"></span> Accra Chamber of Commerce</p>
+        <p>Ayah Ayitey &bull; WDD 231</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
