@@ -1,0 +1,24 @@
+/* Wider views: tablet and desktop */
+@media (min-width:48em){
+  .site-header{padding:.75rem 2rem}
+  .menu-btn{display:none}
+  .header-bar{flex-wrap:wrap}
+  .nav-links,.nav-links.open{display:block;margin:0;border:0}
+  .nav-links ul{display:flex;gap:.25rem}
+  .nav-links a{border-left:0;border-bottom:4px solid transparent;padding:.6rem .9rem}
+  .nav-links a[aria-current="page"]{border-bottom-color:var(--gold);background:transparent}
+  .site-header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand-name{font-size:1.3rem}
+  main{padding:2.5rem 2rem 3.5rem}
+  .page-intro h1{font-size:2.5rem}
+  .members.grid{grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr));gap:1.5rem}
+  .info-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-top:2rem}
+  .list .card-body{grid-template-columns:1.2fr 1.4fr 1.6fr;align-items:start;gap:1.5rem;padding:1rem 1.25rem}
+  .list .head{display:grid;gap:.4rem}
+  .site-footer{padding:2rem}
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:2rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .card,.view-btn,.nav-links a{transition:background-color .15s,box-shadow .15s}
+  .grid .card:hover{box-shadow:0 4px 14px rgba(10,63,59,.18)}
+}
