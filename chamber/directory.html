@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Member Directory | Accra Chamber of Commerce</title>
+  <meta name="description" content="Browse businesses in the Accra Chamber of Commerce directory. View member contact details, websites and membership levels in grid or list view.">
+  <meta name="author" content="Ayah Ayitey">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+
+  <!-- Facebook / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Member Directory | Accra Chamber of Commerce">
+  <meta property="og:description" content="Find and connect with local businesses in Accra, Ghana.">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/small.css">
+  <link rel="stylesheet" href="css/larger.css">
+  <script src="data/members.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <script src="js/directory.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand-name">Accra Chamber of Commerce<span class="brand-tag">Growing business together</span></span>
+      </a>
+      <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </div>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" aria-current="page">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <h1>Member Directory</h1>
+      <p>Meet the businesses that make Accra thrive. Choose a view, then call or visit a member to get started.</p>
+    </section>
+
+    <div class="view-bar" role="group" aria-label="Choose directory layout">
+      <span>View as:</span>
+      <button id="grid-btn" class="view-btn" aria-pressed="true">Grid</button>
+      <button id="list-btn" class="view-btn" aria-pressed="false">List</button>
+    </div>
+
+    <div id="members" class="members grid" aria-busy="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2>Contact us</h2>
+        <address>
+          <p>Accra Chamber of Commerce<br>1 Independence Avenue, Accra, Ghana</p>
+          <p><a href="tel:+233302000000">+233 30 200 0000</a></p>
+          <p><a href="mailto:info@accrachamber.example">info@accrachamber.example</a></p>
+        </address>
+      </div>
+      <div>
+        <h2>Follow us</h2>
+        <p><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+      </div>
+      <div>
+        <h2>About this site</h2>
+        <p>&copy; <span id="year"></span> Accra Chamber of Commerce</p>
+        <p>Ayah Ayitey &bull; WDD 231</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
