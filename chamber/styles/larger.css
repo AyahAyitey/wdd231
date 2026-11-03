@@ -22,3 +22,43 @@
   .card,.view-btn,.nav-links a{transition:background-color .15s,box-shadow .15s}
   .grid .card:hover{box-shadow:0 4px 14px rgba(10,63,59,.18)}
 }
+
+/* =====================================================
+   HOME PAGE – tablet / desktop overrides
+   ===================================================== */
+@media (min-width:48em){
+  /* Hero */
+  .hero{max-height:600px}
+  .hero-img{max-height:600px}
+  .hero-overlay{padding:2.5rem 3rem 3rem}
+  .hero-heading{font-size:3rem}
+  .hero-sub{font-size:1.15rem}
+  .hero-cta{font-size:1.1rem;padding:.8rem 2rem}
+
+  /* Home grid: weather + events side by side, spotlights full width below */
+  .home-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "weather events"
+      "spots   spots";
+    padding:2rem 2rem 3.5rem;
+  }
+  .weather-card{grid-area:weather}
+  .events-card{grid-area:events}
+  .spotlights-card{grid-area:spots}
+
+  /* Spotlights: 2–3 cards in a row */
+  .spotlights-grid{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1.25rem}
+
+  /* Forecast: horizontal row */
+  .forecast-list{grid-template-columns:repeat(3,1fr)}
+}
+
+@media (min-width:64em){
+  /* Three-column layout on large screens */
+  .home-grid{
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:"weather events spots";
+  }
+  .spotlights-grid{grid-template-columns:1fr}
+}
