@@ -1,90 +1,64 @@
-@media (min-width: 40rem) {
-  .site-header {
-    min-height: 5.5rem;
-    padding: 0.75rem max(1.5rem, calc((100% - 72rem) / 2));
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .primary-navigation {
-    position: static;
-    display: block;
-    padding: 0;
-  }
-
-  .primary-navigation ul {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .primary-navigation a {
-    padding: 0.65rem 1rem;
-  }
-
-  .page-content {
-    padding-top: 2rem;
-  }
-
-  .intro-grid {
-    grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 1fr);
-    gap: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .about-panel .panel-body {
-    padding: 1.35rem 1.5rem 0.4rem;
-  }
-
-  .profile-figure {
-    height: calc(100% - 2.76rem);
-    align-content: center;
-    padding: 1.25rem;
-  }
-
-  .course-filters {
-    display: flex;
-    justify-content: center;
-    gap: 0.65rem;
-    padding-top: 1.2rem;
-  }
-
-  .filter-button {
-    min-width: 8.5rem;
-    padding-inline: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .course-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-    padding: 0 1.25rem;
-  }
-
-  .course-card {
-    min-height: 5.3rem;
-    padding: 0.9rem 1rem;
-  }
-
-  .site-footer {
-    gap: 0.55rem;
-    padding: 1.7rem 1rem;
-  }
+/* Wider views: tablet and desktop */
+@media (min-width:48em){
+  .site-header{padding:.75rem 2rem}
+  .menu-btn{display:none}
+  .header-bar{flex-wrap:wrap}
+  .nav-links,.nav-links.open{display:block;margin:0;border:0}
+  .nav-links ul{display:flex;gap:.25rem}
+  .nav-links a{border-left:0;border-bottom:4px solid transparent;padding:.6rem .9rem}
+  .nav-links a[aria-current="page"]{border-bottom-color:var(--gold);background:transparent}
+  .site-header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand-name{font-size:1.3rem}
+  main{padding:2.5rem 2rem 3.5rem}
+  .page-intro h1{font-size:2.5rem}
+  .members.grid{grid-template-columns:repeat(auto-fill,minmax(16.5rem,1fr));gap:1.5rem}
+  .info-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-top:2rem}
+  .list .card-body{grid-template-columns:1.2fr 1.4fr 1.6fr;align-items:start;gap:1.5rem;padding:1rem 1.25rem}
+  .list .head{display:grid;gap:.4rem}
+  .site-footer{padding:2rem}
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:2rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .card,.view-btn,.nav-links a{transition:background-color .15s,box-shadow .15s}
+  .grid .card:hover{box-shadow:0 4px 14px rgba(10,63,59,.18)}
 }
 
-@media (min-width: 60rem) {
-  .course-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* =====================================================
+   HOME PAGE – tablet / desktop overrides
+   ===================================================== */
+@media (min-width:48em){
+  /* Hero */
+  .hero{max-height:600px}
+  .hero-img{max-height:600px}
+  .hero-overlay{padding:2.5rem 3rem 3rem}
+  .hero-heading{font-size:3rem}
+  .hero-sub{font-size:1.15rem}
+  .hero-cta{font-size:1.1rem;padding:.8rem 2rem}
+
+  /* Home grid: weather + events side by side, spotlights full width below */
+  .home-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "weather events"
+      "spots   spots";
+    padding:2rem 2rem 3.5rem;
   }
+  .weather-card{grid-area:weather}
+  .events-card{grid-area:events}
+  .spotlights-card{grid-area:spots}
+
+  /* Spotlights: 2–3 cards in a row */
+  .spotlights-grid{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1.25rem}
+
+  /* Forecast: horizontal row */
+  .forecast-list{grid-template-columns:repeat(3,1fr)}
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+@media (min-width:64em){
+  /* Three-column layout on large screens */
+  .home-grid{
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:"weather events spots";
   }
+  .spotlights-grid{grid-template-columns:1fr}
 }
