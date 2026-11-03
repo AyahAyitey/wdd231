@@ -6,7 +6,7 @@
 // ── OpenWeatherMap config ──────────────────────────────────
 // Accra, Ghana  (lat/lon used for reliable results)
 // Sign up free at https://openweathermap.org/api and replace the key below.
-const API_KEY  = 'b6907d289e10d714a6e88b30761fac74'; // replace with your own OWM free-tier key
+const API_KEY  = '050592eebaf6342d343a291950c3aafe';
 const LAT      = 5.6037;
 const LON      = -0.1870;
 const UNITS    = 'metric';  // Celsius (appropriate for Ghana)
