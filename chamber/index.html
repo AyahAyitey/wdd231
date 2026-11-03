@@ -3,25 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accra Chamber of Commerce</title>
-  <meta name="description" content="Connect with local businesses and learn about the Accra Chamber of Commerce.">
+  <title>Accra Chamber of Commerce | Home</title>
+  <meta name="description" content="Welcome to the Accra Chamber of Commerce. Connect with local businesses, explore membership, and stay up to date with events in Accra, Ghana.">
   <meta name="author" content="Ayah Ayitey">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Accra Chamber of Commerce">
-  <meta property="og:description" content="Connect with local businesses and learn about the Accra Chamber of Commerce.">
+  <meta property="og:title" content="Accra Chamber of Commerce | Home">
+  <meta property="og:description" content="Connect with local businesses and explore opportunities with the Accra Chamber of Commerce.">
   <meta property="og:url" content="https://ayahayitey.github.io/wdd231/chamber/index.html">
   <meta property="og:image" content="https://ayahayitey.github.io/wdd231/chamber/images/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <script src="data/members.js" defer></script>
   <script src="scripts/site.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="header-bar">
       <a class="brand" href="index.html">
@@ -39,28 +46,78 @@
       </ul>
     </nav>
   </header>
-  <main id="main">
-    <section class="page-intro">
-      <h1>Growing business together</h1>
-      <p>Discover local businesses, build connections, and explore opportunities with the Accra Chamber of Commerce.</p>
-      <div class="page-actions">
-        <a class="action-link" href="directory.html">Browse the member directory</a>
-        <a class="action-link secondary-action" href="join.html">Explore membership</a>
+
+  <main id="main" class="home-main">
+
+    <!-- ── Hero ── -->
+    <section class="hero" aria-label="Welcome banner">
+      <img
+        class="hero-img"
+        src="images/og-image.png"
+        alt="Accra city skyline at sunrise with Independence Square in view"
+        width="1200"
+        height="630"
+        fetchpriority="high">
+      <div class="hero-overlay">
+        <h1 class="hero-heading">Growing Business<br>Together in Accra</h1>
+        <p class="hero-sub">Your gateway to Accra's thriving business community.</p>
+        <a class="hero-cta" href="join.html">Join the Chamber</a>
       </div>
     </section>
-    <section class="info-grid" aria-label="Explore the chamber">
-      <article class="info-card">
-        <h2>Find a local business</h2>
-        <p>Browse member businesses in Accra and find contact information for services, shops, and local organizations.</p>
-        <a href="directory.html">Visit the member directory</a>
-      </article>
-      <article class="info-card">
-        <h2>Build your connections</h2>
-        <p>Learn how chamber membership can help you connect with Accra's business community.</p>
-        <a href="join.html">Learn about joining</a>
-      </article>
-    </section>
+
+    <!-- ── Home grid: weather | events | spotlights ── -->
+    <div class="home-grid">
+
+      <!-- Weather -->
+      <section class="home-card weather-card" aria-label="Current weather in Accra">
+        <h2>Accra Weather</h2>
+        <div id="weather-now" class="weather-now" aria-live="polite" aria-busy="true">
+          <p class="weather-loading">Loading weather…</p>
+        </div>
+        <h3 class="forecast-heading">3-Day Forecast</h3>
+        <ul id="weather-forecast" class="forecast-list" aria-live="polite" aria-busy="true"></ul>
+      </section>
+
+      <!-- Current Events -->
+      <section class="home-card events-card" aria-label="Current events">
+        <h2>Current Events</h2>
+        <ul class="events-list">
+          <li class="event-item">
+            <time class="event-date" datetime="2026-11-10">Nov 10</time>
+            <div>
+              <h3 class="event-title">Annual Business Expo</h3>
+              <p>Connect with over 200 exhibitors at the Accra International Conference Centre. Featuring keynotes, workshops, and networking sessions.</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <time class="event-date" datetime="2026-11-17">Nov 17</time>
+            <div>
+              <h3 class="event-title">SME Finance Forum</h3>
+              <p>A half-day seminar on funding options, micro-loans, and investor relations tailored for small and medium enterprises.</p>
+            </div>
+          </li>
+          <li class="event-item">
+            <time class="event-date" datetime="2026-11-25">Nov 25</time>
+            <div>
+              <h3 class="event-title">Women in Business Breakfast</h3>
+              <p>A morning of inspiring talks and peer-to-peer mentoring for women entrepreneurs across Greater Accra.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Company Spotlights -->
+      <section class="home-card spotlights-card" aria-label="Member spotlights">
+        <h2>Member Spotlights</h2>
+        <div id="spotlights" class="spotlights-grid" aria-live="polite" aria-busy="true">
+          <p class="weather-loading">Loading spotlights…</p>
+        </div>
+      </section>
+
+    </div><!-- /.home-grid -->
+
   </main>
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
@@ -72,10 +129,10 @@
         </address>
       </div>
       <div>
-        <h2>Explore</h2>
-        <p><a href="directory.html">Member directory</a></p>
-        <p><a href="join.html">Membership</a></p>
-        <p><a href="discover.html">Discover Accra</a></p>
+        <h2>Follow us</h2>
+        <p><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+        <p><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
       </div>
       <div>
         <h2>About this site</h2>
