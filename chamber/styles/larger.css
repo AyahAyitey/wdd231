@@ -50,7 +50,7 @@
   /* Spotlights: 2–3 cards in a row */
   .spotlights-grid{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1.25rem}
 
-  /* Forecast: horizontal row */
+  /* Forecast: horizontal row at mid breakpoint only */
   .forecast-list{grid-template-columns:repeat(3,1fr)}
 }
 
@@ -61,4 +61,6 @@
     grid-template-areas:"weather events spots";
   }
   .spotlights-grid{grid-template-columns:1fr}
+  /* Weather card is only 1/3 wide here — revert forecast to stacked list */
+  .forecast-list{grid-template-columns:1fr}
 }
