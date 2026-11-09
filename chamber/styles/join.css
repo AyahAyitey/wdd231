@@ -262,7 +262,7 @@
 }
 
 .mem-card--gold .mem-card__price {
-  color: #a07510;
+  color: #7a5a0c; /* darkened for AA contrast (6.5:1 on white) */
 }
 
 .mem-card__tagline {
@@ -295,6 +295,7 @@
 
 /* ── Modals ── */
 .benefit-modal {
+  position: relative; /* for absolute-positioned close button */
   border: none;
   border-radius: .75rem;
   padding: 0;
@@ -367,10 +368,6 @@
 .modal-close:hover {
   border-color: var(--teal-900);
   color: var(--teal-900);
-}
-
-.benefit-modal {
-  position: relative; /* for absolute-positioned close button */
 }
 
 .modal-cta {
