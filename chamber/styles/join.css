@@ -1,0 +1,481 @@
+/* =====================================================
+   join.css – styles for join.html and thankyou.html
+   Mobile-first; desktop overrides in a media query below
+   ===================================================== */
+
+/* ── Page intro overrides ── */
+.page-intro p {
+  max-width: 60ch;
+}
+
+/* ── Join layout: form stacked on top of cards (mobile) ── */
+.join-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Form section ── */
+.join-form-section h2 {
+  font-size: 1.5rem;
+  color: var(--teal-900);
+  margin-bottom: 1.25rem;
+  padding-bottom: .5rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+#membership-form {
+  display: grid;
+  gap: 1.1rem;
+}
+
+#membership-form label {
+  display: grid;
+  gap: .35rem;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+}
+
+#membership-form input[type="text"],
+#membership-form input[type="email"],
+#membership-form input[type="tel"],
+#membership-form textarea {
+  width: 100%;
+  padding: .6rem .75rem;
+  border: 2px solid var(--line);
+  border-radius: .4rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s;
+  box-sizing: border-box;
+  min-height: 44px;
+}
+
+#membership-form input:focus,
+#membership-form textarea:focus {
+  outline: none;
+  border-color: var(--teal-700);
+  box-shadow: 0 0 0 3px rgba(15, 92, 85, .2);
+}
+
+#membership-form input:invalid:not(:placeholder-shown),
+#membership-form input[pattern]:not(:placeholder-shown):invalid {
+  border-color: #b91c1c;
+}
+
+#membership-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.field-hint {
+  display: block;
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: .1rem;
+}
+
+.required-mark {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.required-note {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+
+/* ── Membership Level Radio Group ── */
+.level-fieldset {
+  border: 2px solid var(--line);
+  border-radius: .5rem;
+  padding: 1rem 1rem 1.1rem;
+  margin: 0;
+}
+
+.level-fieldset legend {
+  font-weight: 700;
+  color: var(--ink);
+  padding: 0 .4rem;
+  font-size: .95rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .65rem .75rem;
+  border: 2px solid var(--line);
+  border-radius: .4rem;
+  background: #fff;
+  cursor: pointer;
+  margin-top: .6rem;
+  transition: border-color .15s, background-color .15s;
+}
+
+.radio-label:hover {
+  background: var(--sand);
+}
+
+.radio-label input[type="radio"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  min-height: unset;
+  accent-color: var(--teal-900);
+  flex: none;
+}
+
+.radio-label input[type="radio"]:checked ~ .radio-text {
+  color: var(--teal-900);
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--teal-700);
+  background: var(--sand);
+}
+
+.radio-text {
+  display: grid;
+  gap: .1rem;
+}
+
+.radio-level {
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.radio-desc {
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Level accent colors on radio labels */
+.level-np    { border-left: 5px solid var(--line); }
+.level-bronze{ border-left: 5px solid #cd7f32; }
+.level-silver{ border-left: 5px solid #8a9794; }
+.level-gold  { border-left: 5px solid var(--gold); }
+
+.level-np:has(input:checked)    { border-left-color: var(--line);   border-color: var(--teal-700); }
+.level-bronze:has(input:checked){ border-left-color: #cd7f32;       border-color: var(--teal-700); }
+.level-silver:has(input:checked){ border-left-color: #8a9794;       border-color: var(--teal-700); }
+.level-gold:has(input:checked)  { border-left-color: var(--gold);   border-color: var(--teal-700); }
+
+/* ── Submit button ── */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: .85rem 1.5rem;
+  background: var(--teal-900);
+  color: #fff;
+  border: none;
+  border-radius: .4rem;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color .15s, transform .1s;
+  margin-top: .5rem;
+}
+
+.submit-btn:hover {
+  background: var(--teal-700);
+}
+
+.submit-btn:active {
+  transform: scale(.98);
+}
+
+/* ── Membership Level Cards ── */
+.membership-cards h2 {
+  font-size: 1.5rem;
+  color: var(--teal-900);
+  margin-bottom: 1.25rem;
+  padding-bottom: .5rem;
+  border-bottom: 3px solid var(--gold);
+}
+
+/* Card entrance animation (on load, no hover trigger) */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mem-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: .6rem;
+  border-top: 5px solid var(--line);
+  padding: 1.25rem;
+  display: grid;
+  gap: .75rem;
+  /* Animation: applied via JS-added class to preserve prefers-reduced-motion */
+}
+
+.mem-card.animate {
+  animation: cardSlideIn .5s ease both;
+}
+
+.mem-card.animate:nth-child(2) { animation-delay: .1s; }
+.mem-card.animate:nth-child(3) { animation-delay: .2s; }
+.mem-card.animate:nth-child(4) { animation-delay: .3s; }
+.mem-card.animate:nth-child(5) { animation-delay: .4s; }
+
+.mem-card--np     { border-top-color: var(--line); }
+.mem-card--bronze { border-top-color: #cd7f32; }
+.mem-card--silver { border-top-color: #8a9794; }
+.mem-card--gold   { border-top-color: var(--gold); }
+
+.mem-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.mem-card__title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--teal-900);
+  margin: 0;
+}
+
+.mem-card__price {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.mem-card--gold .mem-card__price {
+  color: #a07510;
+}
+
+.mem-card__tagline {
+  font-size: .9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.mem-card__link {
+  display: inline-block;
+  width: max-content;
+  padding: .5rem 1rem;
+  background: transparent;
+  border: 2px solid var(--teal-900);
+  border-radius: .4rem;
+  color: var(--teal-900);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s, color .15s;
+  min-height: 44px;
+}
+
+.mem-card__link:hover {
+  background: var(--teal-900);
+  color: #fff;
+}
+
+/* ── Modals ── */
+.benefit-modal {
+  border: none;
+  border-radius: .75rem;
+  padding: 0;
+  max-width: min(90vw, 28rem);
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(10, 63, 59, .25);
+  border-top: 6px solid var(--teal-900);
+}
+
+.benefit-modal--bronze { border-top-color: #cd7f32; }
+.benefit-modal--silver { border-top-color: #8a9794; }
+.benefit-modal--gold   { border-top-color: var(--gold); }
+
+.benefit-modal::backdrop {
+  background: rgba(10, 63, 59, .55);
+}
+
+.modal-inner {
+  padding: 1.5rem;
+  display: grid;
+  gap: .75rem;
+}
+
+.benefit-modal h2 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--teal-900);
+  margin: 0;
+  padding-right: 2rem; /* space for close button */
+}
+
+.modal-price {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0;
+}
+
+.benefit-modal ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: .45rem;
+}
+
+.benefit-modal li {
+  font-size: .95rem;
+  color: var(--ink);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+  transition: border-color .15s, color .15s;
+}
+
+.modal-close:hover {
+  border-color: var(--teal-900);
+  color: var(--teal-900);
+}
+
+.benefit-modal {
+  position: relative; /* for absolute-positioned close button */
+}
+
+.modal-cta {
+  display: inline-block;
+  width: max-content;
+  padding: .6rem 1.25rem;
+  background: var(--teal-900);
+  color: #fff;
+  border: none;
+  border-radius: .4rem;
+  font: inherit;
+  font-weight: 700;
+  font-size: .95rem;
+  cursor: pointer;
+  margin-top: .25rem;
+  min-height: 44px;
+  transition: background-color .15s;
+}
+
+.modal-cta:hover {
+  background: var(--teal-700);
+}
+
+/* ── Thank You page ── */
+.thankyou-intro {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.thankyou-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--teal-900);
+  color: var(--gold);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.thankyou-summary {
+  max-width: 40rem;
+  margin-top: 1.5rem;
+}
+
+.summary-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: .5rem 1rem;
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-list dt {
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.summary-list dd {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+/* ── Desktop overrides ── */
+@media (min-width: 48em) {
+  /* Form + cards side by side: form wider on left, cards stacked on right */
+  .join-layout {
+    grid-template-columns: 1fr 22rem;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* Thank-you summary centered */
+  .thankyou-summary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 64em) {
+  .join-layout {
+    grid-template-columns: 1fr 24rem;
+  }
+}
+
+/* ── Respect reduced-motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  .mem-card.animate {
+    animation: none;
+  }
+}
