@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You | Accra Chamber of Commerce</title>
+  <meta name="description" content="Thank you for applying to join the Accra Chamber of Commerce. Your application has been received.">
+  <meta name="author" content="Ayah Ayitey">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thank You | Accra Chamber of Commerce">
+  <meta property="og:description" content="Thank you for applying to join the Accra Chamber of Commerce.">
+  <meta property="og:url" content="https://ayahayitey.github.io/wdd231/chamber/thankyou.html">
+  <meta property="og:image" content="https://ayahayitey.github.io/wdd231/chamber/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
+  <script src="scripts/site.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-bar">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand-name">Accra Chamber of Commerce<span class="brand-tag">Growing business together</span></span>
+      </a>
+      <button id="menu-btn" class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </div>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-intro thankyou-intro">
+      <div class="thankyou-icon" aria-hidden="true">&#10003;</div>
+      <h1>Application Received!</h1>
+      <p>Thank you for applying to join the Accra Chamber of Commerce. We&rsquo;ll review your application and be in touch shortly.</p>
+    </section>
+
+    <!-- Application Summary -->
+    <section class="info-card thankyou-summary" aria-label="Your application summary">
+      <h2>Your Application Summary</h2>
+      <dl class="summary-list">
+        <div class="summary-row">
+          <dt>First Name</dt>
+          <dd id="ty-first-name">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Last Name</dt>
+          <dd id="ty-last-name">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Email Address</dt>
+          <dd id="ty-email">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Mobile Phone</dt>
+          <dd id="ty-phone">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Business / Organization</dt>
+          <dd id="ty-org-name">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Membership Level</dt>
+          <dd id="ty-membership-level">&mdash;</dd>
+        </div>
+        <div class="summary-row">
+          <dt>Date Submitted</dt>
+          <dd id="ty-timestamp">&mdash;</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="page-actions">
+      <a href="index.html" class="action-link">Return Home</a>
+      <a href="directory.html" class="action-link secondary-action">Browse Members</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h2>Contact us</h2>
+        <address>
+          <p>Accra Chamber of Commerce<br>1 Independence Avenue, Accra, Ghana</p>
+          <p><a href="tel:+233302000000">+233 30 200 0000</a></p>
+          <p><a href="mailto:info@accrachamber.example">info@accrachamber.example</a></p>
+        </address>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <p><a href="directory.html">Member directory</a></p>
+        <p><a href="discover.html">Discover Accra</a></p>
+      </div>
+      <div>
+        <h2>About this site</h2>
+        <p>&copy; <span id="year"></span> Accra Chamber of Commerce</p>
+        <p>Ayah Ayitey &bull; WDD 231</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

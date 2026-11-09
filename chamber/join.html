@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Join | Accra Chamber of Commerce</title>
-  <meta name="description" content="Learn about joining the Accra Chamber of Commerce and connecting with local businesses.">
+  <meta name="description" content="Apply for membership in the Accra Chamber of Commerce. Choose a membership level and complete the application form.">
   <meta name="author" content="Ayah Ayitey">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Join | Accra Chamber of Commerce">
-  <meta property="og:description" content="Learn about joining the Accra Chamber of Commerce and connecting with local businesses.">
+  <meta property="og:description" content="Apply for membership in the Accra Chamber of Commerce and connect with local businesses.">
   <meta property="og:url" content="https://ayahayitey.github.io/wdd231/chamber/join.html">
   <meta property="og:image" content="https://ayahayitey.github.io/wdd231/chamber/images/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +19,13 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
   <script src="scripts/site.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="header-bar">
       <a class="brand" href="index.html">
@@ -39,25 +43,308 @@
       </ul>
     </nav>
   </header>
+
   <main id="main">
     <section class="page-intro">
       <h1>Join the Accra Chamber</h1>
-      <p>Connect your business with a community of local organizations and entrepreneurs.</p>
+      <p>Complete the application below to begin your membership and connect with Accra&rsquo;s thriving business community.</p>
     </section>
-    <section class="info-grid" aria-label="Membership information">
-      <article class="info-card">
-        <h2>Connect with the community</h2>
-        <p>Chamber membership is an opportunity to build relationships with businesses across Accra.</p>
-      </article>
-      <article class="info-card">
-        <h2>Get started</h2>
-        <p>Contact the Chamber to ask about membership options, eligibility, and the application process.</p>
-        <p><a href="tel:+233302000000">Call +233 30 200 0000</a></p>
-        <p><a href="mailto:info@accrachamber.example">Email the Chamber</a></p>
-      </article>
-    </section>
-    <p class="page-back-link"><a href="directory.html">Browse current members</a></p>
+
+    <!-- ── Join layout: form + membership cards ── -->
+    <div class="join-layout">
+
+      <!-- ── Application Form ── -->
+      <section class="join-form-section" aria-label="Membership application form">
+        <form
+          id="membership-form"
+          method="get"
+          action="thankyou.html"
+          novalidate>
+
+          <h2>Application Form</h2>
+
+          <!-- First Name -->
+          <label for="first-name">
+            First Name <span class="required-mark" aria-hidden="true">*</span>
+            <input
+              type="text"
+              id="first-name"
+              name="firstName"
+              title="Enter your first name"
+              autocomplete="given-name"
+              required>
+          </label>
+
+          <!-- Last Name -->
+          <label for="last-name">
+            Last Name <span class="required-mark" aria-hidden="true">*</span>
+            <input
+              type="text"
+              id="last-name"
+              name="lastName"
+              title="Enter your last name"
+              autocomplete="family-name"
+              required>
+          </label>
+
+          <!-- Organizational Title -->
+          <label for="org-title">
+            Organizational Title
+            <span class="field-hint">Alpha characters, hyphens, and spaces only (min. 7 characters)</span>
+            <input
+              type="text"
+              id="org-title"
+              name="orgTitle"
+              title="Your title within your organization (alpha, hyphens, spaces, minimum 7 characters)"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\- ]{7,}">
+          </label>
+
+          <!-- Email -->
+          <label for="email">
+            Email Address <span class="required-mark" aria-hidden="true">*</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              title="Enter a valid email address"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required>
+          </label>
+
+          <!-- Phone -->
+          <label for="phone">
+            Mobile Phone Number <span class="required-mark" aria-hidden="true">*</span>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              title="Enter your mobile phone number"
+              autocomplete="tel"
+              required>
+          </label>
+
+          <!-- Organization Name -->
+          <label for="org-name">
+            Business / Organization Name <span class="required-mark" aria-hidden="true">*</span>
+            <input
+              type="text"
+              id="org-name"
+              name="orgName"
+              title="Enter your business or organization name"
+              autocomplete="organization"
+              required>
+          </label>
+
+          <!-- Membership Level -->
+          <fieldset class="level-fieldset">
+            <legend>Membership Level <span class="required-mark" aria-hidden="true">*</span></legend>
+            <label class="radio-label level-np">
+              <input type="radio" name="membershipLevel" value="np" required title="NP Membership for non-profit organizations, no fee">
+              <span class="radio-text">
+                <span class="radio-level">NP Membership</span>
+                <span class="radio-desc">Non-profit organizations &mdash; No fee</span>
+              </span>
+            </label>
+            <label class="radio-label level-bronze">
+              <input type="radio" name="membershipLevel" value="bronze" title="Bronze Membership">
+              <span class="radio-text">
+                <span class="radio-level">Bronze Membership</span>
+                <span class="radio-desc">Entry-level business membership</span>
+              </span>
+            </label>
+            <label class="radio-label level-silver">
+              <input type="radio" name="membershipLevel" value="silver" title="Silver Membership">
+              <span class="radio-text">
+                <span class="radio-level">Silver Membership</span>
+                <span class="radio-desc">Enhanced visibility and networking</span>
+              </span>
+            </label>
+            <label class="radio-label level-gold">
+              <input type="radio" name="membershipLevel" value="gold" title="Gold Membership">
+              <span class="radio-text">
+                <span class="radio-level">Gold Membership</span>
+                <span class="radio-desc">Premium benefits and spotlight features</span>
+              </span>
+            </label>
+          </fieldset>
+
+          <!-- Business Description -->
+          <label for="description">
+            Business / Organization Description
+            <textarea
+              id="description"
+              name="description"
+              title="Briefly describe your business or organization"
+              rows="4"></textarea>
+          </label>
+
+          <!-- Hidden Timestamp -->
+          <input
+            type="hidden"
+            id="timestamp"
+            name="timestamp">
+
+          <!-- Submit -->
+          <input
+            type="submit"
+            class="submit-btn"
+            value="Submit Application">
+
+          <p class="required-note"><span class="required-mark" aria-hidden="true">*</span> Required field</p>
+
+        </form>
+      </section>
+
+      <!-- ── Membership Level Cards ── -->
+      <aside class="membership-cards" aria-label="Membership levels">
+        <h2>Membership Levels</h2>
+
+        <!-- NP Card -->
+        <div class="mem-card mem-card--np">
+          <div class="mem-card__header">
+            <h3 class="mem-card__title">NP Membership</h3>
+            <span class="mem-card__price">No Fee</span>
+          </div>
+          <p class="mem-card__tagline">For non-profit organizations committed to community impact.</p>
+          <button
+            class="mem-card__link"
+            type="button"
+            aria-haspopup="dialog"
+            data-modal="modal-np">
+            View Benefits
+          </button>
+        </div>
+
+        <!-- Bronze Card -->
+        <div class="mem-card mem-card--bronze">
+          <div class="mem-card__header">
+            <h3 class="mem-card__title">Bronze Membership</h3>
+            <span class="mem-card__price">GH&#8373; 500 / yr</span>
+          </div>
+          <p class="mem-card__tagline">Get started with the Chamber and grow your network.</p>
+          <button
+            class="mem-card__link"
+            type="button"
+            aria-haspopup="dialog"
+            data-modal="modal-bronze">
+            View Benefits
+          </button>
+        </div>
+
+        <!-- Silver Card -->
+        <div class="mem-card mem-card--silver">
+          <div class="mem-card__header">
+            <h3 class="mem-card__title">Silver Membership</h3>
+            <span class="mem-card__price">GH&#8373; 1,200 / yr</span>
+          </div>
+          <p class="mem-card__tagline">Enhanced visibility and exclusive networking opportunities.</p>
+          <button
+            class="mem-card__link"
+            type="button"
+            aria-haspopup="dialog"
+            data-modal="modal-silver">
+            View Benefits
+          </button>
+        </div>
+
+        <!-- Gold Card -->
+        <div class="mem-card mem-card--gold">
+          <div class="mem-card__header">
+            <h3 class="mem-card__title">Gold Membership</h3>
+            <span class="mem-card__price">GH&#8373; 2,500 / yr</span>
+          </div>
+          <p class="mem-card__tagline">Premium placement, spotlight features, and priority access.</p>
+          <button
+            class="mem-card__link"
+            type="button"
+            aria-haspopup="dialog"
+            data-modal="modal-gold">
+            View Benefits
+          </button>
+        </div>
+
+      </aside>
+    </div><!-- /.join-layout -->
   </main>
+
+  <!-- ── Modals ── -->
+
+  <!-- NP Modal -->
+  <dialog id="modal-np" class="benefit-modal" aria-labelledby="modal-np-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close NP Membership benefits" data-close="modal-np">&times;</button>
+      <h2 id="modal-np-title">NP Membership Benefits</h2>
+      <p class="modal-price">No Annual Fee</p>
+      <ul>
+        <li>Listing in the online member directory</li>
+        <li>Invitations to community outreach events</li>
+        <li>Access to Chamber newsletters and announcements</li>
+        <li>Networking with local businesses and NGOs</li>
+        <li>Use of Chamber meeting rooms (limited)</li>
+      </ul>
+      <button class="modal-cta" data-close="modal-np">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Bronze Modal -->
+  <dialog id="modal-bronze" class="benefit-modal benefit-modal--bronze" aria-labelledby="modal-bronze-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close Bronze Membership benefits" data-close="modal-bronze">&times;</button>
+      <h2 id="modal-bronze-title">Bronze Membership Benefits</h2>
+      <p class="modal-price">GH&#8373; 500 / year</p>
+      <ul>
+        <li>All NP Membership benefits</li>
+        <li>Featured listing in the member directory</li>
+        <li>10% discount on Chamber training workshops</li>
+        <li>Access to member-only networking events</li>
+        <li>Monthly business tips newsletter</li>
+        <li>One free event ticket per quarter</li>
+      </ul>
+      <button class="modal-cta" data-close="modal-bronze">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Silver Modal -->
+  <dialog id="modal-silver" class="benefit-modal benefit-modal--silver" aria-labelledby="modal-silver-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close Silver Membership benefits" data-close="modal-silver">&times;</button>
+      <h2 id="modal-silver-title">Silver Membership Benefits</h2>
+      <p class="modal-price">GH&#8373; 1,200 / year</p>
+      <ul>
+        <li>All Bronze Membership benefits</li>
+        <li>Spotlight feature on the Chamber home page (rotational)</li>
+        <li>25% discount on all Chamber events and workshops</li>
+        <li>Priority booth placement at the Annual Business Expo</li>
+        <li>Logo placement in Chamber marketing materials</li>
+        <li>Quarterly one-on-one business advisory session</li>
+        <li>Social media shoutout once per quarter</li>
+      </ul>
+      <button class="modal-cta" data-close="modal-silver">Close</button>
+    </div>
+  </dialog>
+
+  <!-- Gold Modal -->
+  <dialog id="modal-gold" class="benefit-modal benefit-modal--gold" aria-labelledby="modal-gold-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close Gold Membership benefits" data-close="modal-gold">&times;</button>
+      <h2 id="modal-gold-title">Gold Membership Benefits</h2>
+      <p class="modal-price">GH&#8373; 2,500 / year</p>
+      <ul>
+        <li>All Silver Membership benefits</li>
+        <li>Permanent spotlight feature on the Chamber home page</li>
+        <li>Free entry to all Chamber events and workshops</li>
+        <li>Premium booth at the Annual Business Expo (corner location)</li>
+        <li>Dedicated feature article in the Chamber quarterly magazine</li>
+        <li>Monthly business advisory sessions with Chamber leadership</li>
+        <li>Speaking opportunity at one Chamber event per year</li>
+        <li>Exclusive invitation to Gold Member roundtable dinners</li>
+      </ul>
+      <button class="modal-cta" data-close="modal-gold">Close</button>
+    </div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
