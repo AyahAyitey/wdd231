@@ -50,7 +50,7 @@
   /* Spotlights: 2–3 cards in a row */
   .spotlights-grid{grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1.25rem}
 
-  /* Forecast: horizontal row at mid breakpoint only */
+  /* Forecast: horizontal row */
   .forecast-list{grid-template-columns:repeat(3,1fr)}
 }
 
@@ -61,6 +61,59 @@
     grid-template-areas:"weather events spots";
   }
   .spotlights-grid{grid-template-columns:1fr}
-  /* Weather card is only 1/3 wide here — revert forecast to stacked list */
-  .forecast-list{grid-template-columns:1fr}
+}
+
+/* =====================================================
+   DISCOVER PAGE – medium screens (641px – 1024px)
+   Named grid: 2 columns, card3 spans both
+   ===================================================== */
+@media (min-width: 40.0625em) {
+  .discover-intro {
+    padding: 2rem 2rem 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .discover-intro__text h1 {
+    font-size: 2.4rem;
+  }
+
+  .discover-grid {
+    padding: 1.5rem 2rem 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card1  card2"
+      "card3  card3"
+      "card4  card5"
+      "card6  card7"
+      "card8  card8";
+  }
+
+  /* Image hover effect – medium and up only */
+  .discover-card__figure img {
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .discover-card:hover .discover-card__figure img {
+    transform: scale(1.05);
+    filter: brightness(1.08) saturate(1.15);
+    box-shadow: 0 6px 20px rgba(10, 63, 59, 0.3);
+  }
+}
+
+/* =====================================================
+   DISCOVER PAGE – large screens (1025px +)
+   Named grid: 3 columns, varied spanning
+   ===================================================== */
+@media (min-width: 64.0625em) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card1  card2  card3"
+      "card4  card4  card5"
+      "card6  card7  card8";
+  }
 }
