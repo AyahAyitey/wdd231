@@ -4,24 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Discover Accra | Accra Chamber of Commerce</title>
-  <meta name="description" content="Discover businesses and services represented in the Accra Chamber of Commerce directory.">
+  <meta name="description" content="Discover the best places, businesses, and attractions in Accra, Ghana. Explore eight highlights that make Accra a thriving city to live and do business in.">
   <meta name="author" content="Ayah Ayitey">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Discover Accra | Accra Chamber of Commerce">
-  <meta property="og:description" content="Discover businesses and services represented in the Accra Chamber of Commerce directory.">
+  <meta property="og:description" content="Explore eight places and businesses that make Accra a great city to live and work in.">
   <meta property="og:url" content="https://ayahayitey.github.io/wdd231/chamber/discover.html">
   <meta property="og:image" content="https://ayahayitey.github.io/wdd231/chamber/images/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+
   <script src="scripts/site.js" defer></script>
+  <script type="module" src="scripts/discover.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="header-bar">
       <a class="brand" href="index.html">
@@ -39,19 +46,25 @@
       </ul>
     </nav>
   </header>
-  <main id="main">
-    <section class="page-intro">
-      <h1>Discover Accra's businesses</h1>
-      <p>From local food and crafts to technology and logistics, explore the member businesses that help Accra thrive.</p>
-      <div class="page-actions">
-        <a class="action-link" href="directory.html">Explore all member businesses</a>
+
+  <main id="main" class="discover-main">
+
+    <section class="discover-intro">
+      <div class="discover-intro__text">
+        <h1>Discover Accra</h1>
+        <p>Eight places that capture the energy, culture, and enterprise of Ghana's capital city.</p>
       </div>
+      <!-- localStorage visit message -->
+      <p id="visit-message" class="visit-message" aria-live="polite"></p>
     </section>
-    <section class="info-grid" aria-label="Business categories">
-      <article class="info-card"><h2>Arts and food</h2><p>Meet local makers, markets, cafes, and restaurants.</p></article>
-      <article class="info-card"><h2>Services and technology</h2><p>Find healthcare, printing, technology, and logistics services.</p></article>
-    </section>
+
+    <!-- 8-card named-grid layout -->
+    <div id="discover-grid" class="discover-grid">
+      <!-- Cards injected by discover.js -->
+    </div>
+
   </main>
+
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
