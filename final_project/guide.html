@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Guide | Accra Street Eats</title>
+  <meta name="description" content="Browse, filter and save popular Ghanaian street dishes, ingredients and typical prices.">
+  <meta name="author" content="Ayah Kodjo Ayitey">
+  <meta property="og:title" content="Accra Street Eats Food Guide">
+  <meta property="og:description" content="Explore dishes, ingredients and typical prices across Ghana.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-accra-street-eats.svg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="scripts/guide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accra Street Eats home"><span class="brand-mark" aria-hidden="true">ASE</span><span>Accra Street Eats</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="sr-only">Toggle menu</span><span aria-hidden="true"></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a class="active" href="guide.html" aria-current="page">Food Guide</a><a href="where.html">Where to Eat</a>
+    </nav>
+  </header>
+  <main id="main-content" class="guide-main">
+    <header class="page-header">
+      <p class="eyebrow">The street food menu</p>
+      <h1>Food Guide</h1>
+      <p>Choose a category, compare dishes and save the ones you want to try.</p>
+    </header>
+    <div class="toolbar">
+      <label for="category-filter">Filter by type</label>
+      <select id="category-filter" name="category">
+        <option value="all">All dishes</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="snack">Snack</option>
+        <option value="main">Main meal</option>
+        <option value="drink">Drink</option>
+      </select>
+      <button id="saved-only" class="filter-button" type="button" aria-pressed="false">Saved only <span id="saved-count">0</span></button>
+    </div>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <section id="dish-grid" class="card-grid guide-grid" aria-label="Street dishes"></section>
+  </main>
+  <dialog id="dish-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close dish details">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+  <footer class="site-footer">
+    <div><p><strong>Accra Street Eats</strong></p><p>&copy; <span id="year"></span> Ayah Kodjo Ayitey</p></div>
+    <nav aria-label="Footer navigation"><a href="attributions.html">Attributions</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">Project Video</a></nav>
+  </footer>
+</body>
+</html>

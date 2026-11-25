@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where to Eat | Accra Street Eats</title>
+  <meta name="description" content="Explore popular Accra neighborhoods for street food and recommend a favorite Ghanaian vendor.">
+  <meta name="author" content="Ayah Kodjo Ayitey">
+  <meta property="og:title" content="Where to Eat in Accra">
+  <meta property="og:description" content="Find neighborhood food stops and share a trusted local vendor.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-accra-street-eats.svg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="scripts/where.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accra Street Eats home"><span class="brand-mark" aria-hidden="true">ASE</span><span>Accra Street Eats</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="sr-only">Toggle menu</span><span aria-hidden="true"></span></button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a href="guide.html">Food Guide</a><a class="active" href="where.html" aria-current="page">Where to Eat</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <header class="page-header where-header">
+      <p class="eyebrow">Eat with confidence</p>
+      <h1>Where to Eat</h1>
+      <p>Start in busy, well-known neighborhoods and use these practical tips to choose a clean vendor.</p>
+    </header>
+    <section class="places section" aria-labelledby="places-title">
+      <h2 id="places-title">Popular food areas</h2>
+      <div class="places-grid">
+        <article class="place-card">
+          <h3>Makola</h3>
+          <p><strong>Bustling market lanes</strong></p>
+          <p><strong>Try:</strong> Waakye, kenkey and smoked fish</p>
+          <p>Go in the morning for the widest breakfast choice.</p>
+        </article>
+        <article class="place-card">
+          <h3>Osu</h3>
+          <p><strong>Central nightlife and dining area</strong></p>
+          <p><strong>Try:</strong> Kelewele, chichinga and bofrot</p>
+          <p>Many evening vendors gather near busy intersections.</p>
+        </article>
+        <article class="place-card">
+          <h3>Jamestown</h3>
+          <p><strong>Historic coastal neighborhood</strong></p>
+          <p><strong>Try:</strong> Fresh fish, kenkey and gari</p>
+          <p>Pair a market visit with a walk along the waterfront.</p>
+        </article>
+        <article class="place-card">
+          <h3>Labadi</h3>
+          <p><strong>Beachside food stop</strong></p>
+          <p><strong>Try:</strong> Grilled fish, chichinga and drinks</p>
+          <p>Ask the vendor to point out today’s freshly grilled fish.</p>
+        </article>
+        <article class="place-card">
+          <h3>Kaneshie</h3>
+          <p><strong>Major market and transport hub</strong></p>
+          <p><strong>Try:</strong> Red-red, waakye and porridge</p>
+          <p>Choose stalls with steady customer turnover.</p>
+        </article>
+        <article class="place-card">
+          <h3>Adabraka</h3>
+          <p><strong>Central residential area</strong></p>
+          <p><strong>Try:</strong> Sobolo, bofrot and Hausa koko</p>
+          <p>Afternoon and morning are good times for different snacks.</p>
+        </article>
+        <article class="place-card">
+          <h3>Chorkor</h3>
+          <p><strong>Coastal fishing community</strong></p>
+          <p><strong>Try:</strong> Smoked fish, kenkey and hot sauce</p>
+          <p>Look for prepared-to-order fish and covered accompaniments.</p>
+        </article>
+      </div>
+    </section>
+    <section class="hygiene section" aria-labelledby="hygiene-title">
+      <h2 id="hygiene-title">Simple hygiene checks</h2>
+      <ul class="check-grid">
+        <li><strong>Check the crowd</strong><span>Popular stalls often have fresh, fast turnover.</span></li>
+        <li><strong>Watch food handling</strong><span>Look for covered food and clean utensils.</span></li>
+        <li><strong>Start gentle</strong><span>Ask for less pepper if spicy food is new to you.</span></li>
+        <li><strong>Drink safely</strong><span>Choose sealed bottled water or well-known drinks.</span></li>
+      </ul>
+    </section>
+    <section class="recommend section" aria-labelledby="recommend-title">
+      <div>
+        <p class="eyebrow">Share local knowledge</p>
+        <h2 id="recommend-title">Recommend a vendor</h2>
+        <p>Know a great street food seller in Accra? Send us the details.</p>
+      </div>
+      <form id="vendor-form" class="vendor-form" action="submit.html" method="get">
+        <label for="name">Your name<input id="name" name="name" type="text" autocomplete="name" required minlength="2"></label>
+        <label for="email">Email address<input id="email" name="email" type="email" autocomplete="email" required></label>
+        <label for="vendor">Vendor name<input id="vendor" name="vendor" type="text" required minlength="2"></label>
+        <label for="neighborhood">Neighborhood
+          <select id="neighborhood" name="neighborhood" required>
+            <option value="">Choose an area</option><option>Osu</option><option>Jamestown</option><option>Makola</option><option>Labadi</option><option>Adabraka</option><option>Kaneshie</option><option>Chorkor</option><option>Other</option>
+          </select>
+        </label>
+        <label class="full" for="specialty">What should visitors order?<textarea id="specialty" name="specialty" required minlength="5" rows="4"></textarea></label>
+        <label class="full consent"><input type="checkbox" name="consent" value="yes" required> I confirm this recommendation is accurate to the best of my knowledge.</label>
+        <button class="button full" type="submit">Send recommendation</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><p><strong>Accra Street Eats</strong></p><p>&copy; <span id="year"></span> Ayah Kodjo Ayitey</p></div>
+    <nav aria-label="Footer navigation"><a href="attributions.html">Attributions</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">Project Video</a></nav>
+  </footer>
+</body>
+</html>

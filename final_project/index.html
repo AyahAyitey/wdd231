@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accra Street Eats | Ghanaian Street Food Guide</title>
+  <meta name="description" content="Discover popular Ghanaian street food in Accra, with dishes, typical prices, locations and vendor recommendations.">
+  <meta name="author" content="Ayah Kodjo Ayitey">
+  <meta property="og:title" content="Accra Street Eats">
+  <meta property="og:description" content="Your guide to popular street food in Ghana and the people who make it.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-accra-street-eats.svg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Accra Street Eats home">
+      <span class="brand-mark" aria-hidden="true">ASE</span>
+      <span>Accra Street Eats</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">Toggle menu</span><span aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html" aria-current="page">Home</a>
+      <a href="guide.html">Food Guide</a>
+      <a href="where.html">Where to Eat</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Taste Accra one bite at a time</p>
+        <h1 id="hero-title">Good food. Great people. Real Ghana.</h1>
+        <p>Find the dishes locals love, learn what goes into them, and discover where to enjoy them across Accra.</p>
+        <a class="button" href="guide.html">Explore the food guide <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="featured section" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Start with these favorites</p>
+          <h2 id="featured-title">Featured dishes</h2>
+        </div>
+        <a class="text-link" href="guide.html">View all dishes →</a>
+      </div>
+      <div id="featured-dishes" class="card-grid" aria-live="polite"></div>
+    </section>
+    <section class="story section" aria-labelledby="story-title">
+      <div class="story-card">
+        <p class="eyebrow">A living food culture</p>
+        <h2 id="story-title">More than a quick bite</h2>
+        <p>Street food brings conversations, traditions and neighborhood life to every plate. Accra Street Eats makes that experience easier to explore.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>18</dt><dd>dishes to discover</dd></div>
+        <div><dt>7</dt><dd>Accra neighborhoods</dd></div>
+        <div><dt>GH₵5–40</dt><dd>typical meal range</dd></div>
+      </dl>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>
+      <p><strong>Accra Street Eats</strong></p>
+      <p>&copy; <span id="year"></span> Ayah Kodjo Ayitey</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="attributions.html">Attributions</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">Project Video</a>
+    </nav>
+  </footer>
+</body>
+</html>
