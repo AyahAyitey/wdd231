@@ -6,7 +6,7 @@
   .toolbar,
   dialog,
   .skip-link {
-    display: none !important;
+    display: none;
   }
 
   body {
