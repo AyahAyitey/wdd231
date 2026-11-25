@@ -1,0 +1,28 @@
+@media print {
+  .menu-toggle,
+  .primary-nav,
+  .submit-nav,
+  .card-actions,
+  .toolbar,
+  dialog,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  a {
+    color: #000;
+  }
+
+  .dish-card,
+  .place-card,
+  .story-card,
+  .vendor-form,
+  .submit-card {
+    box-shadow: none;
+  }
+}
