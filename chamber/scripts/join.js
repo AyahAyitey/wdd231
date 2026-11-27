@@ -1,6 +1,6 @@
 /**
  * join.js – Membership application page scripts
- * Handles: timestamp injection, modal open/close, card entrance animation
+ * Handles: timestamp injection and modal open/close
  */
 
 // ── 1. Timestamp hidden field ──────────────────────────────────────────────
@@ -19,25 +19,7 @@
 })();
 
 
-// ── 2. Membership card animations ─────────────────────────────────────────
-// Add the .animate class after a brief delay so the CSS @keyframes triggers
-// on page load (not on hover). Respects prefers-reduced-motion.
-(function animateCards() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
-
-  const cards = document.querySelectorAll('.mem-card');
-  // Use requestAnimationFrame + small timeout so the animation fires fresh
-  // after the initial paint.
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      cards.forEach((card) => card.classList.add('animate'));
-    }, 80);
-  });
-})();
-
-
-// ── 3. Modal open / close ──────────────────────────────────────────────────
+// ── 2. Modal open / close ──────────────────────────────────────────────────
 (function initModals() {
   // Open: any button with [data-modal] attribute
   document.querySelectorAll('[data-modal]').forEach((btn) => {
