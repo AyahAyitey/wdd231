@@ -3,11 +3,6 @@
    Mobile-first; desktop overrides in a media query below
    ===================================================== */
 
-/* ── Page intro overrides ── */
-.page-intro p {
-  max-width: 60ch;
-}
-
 /* ── Join layout: form stacked on top of cards (mobile) ── */
 .join-layout {
   display: grid;
@@ -47,12 +42,20 @@
   border: 2px solid var(--line);
   border-radius: .4rem;
   font: inherit;
-  font-size: 1rem;
   color: var(--ink);
-  background: #fff;
+  background: var(--white);
   transition: border-color .15s, box-shadow .15s;
-  box-sizing: border-box;
+}
+
+#membership-form input[type="text"],
+#membership-form input[type="email"],
+#membership-form input[type="tel"] {
   min-height: 44px;
+}
+
+#membership-form input::placeholder {
+  color: var(--muted);
+  opacity: 1;
 }
 
 #membership-form input:focus,
@@ -64,7 +67,7 @@
 
 #membership-form input:invalid:not(:placeholder-shown),
 #membership-form input[pattern]:not(:placeholder-shown):invalid {
-  border-color: #b91c1c;
+  border-color: var(--danger);
 }
 
 #membership-form textarea {
@@ -81,7 +84,7 @@
 }
 
 .required-mark {
-  color: #b91c1c;
+  color: var(--danger);
   font-weight: 700;
 }
 
@@ -113,7 +116,7 @@
   padding: .65rem .75rem;
   border: 2px solid var(--line);
   border-radius: .4rem;
-  background: #fff;
+  background: var(--white);
   cursor: pointer;
   margin-top: .6rem;
   transition: border-color .15s, background-color .15s;
@@ -158,14 +161,14 @@
 
 /* Level accent colors on radio labels */
 .level-np    { border-left: 5px solid var(--line); }
-.level-bronze{ border-left: 5px solid #cd7f32; }
-.level-silver{ border-left: 5px solid #8a9794; }
+.level-bronze{ border-left: 5px solid var(--bronze); }
+.level-silver{ border-left: 5px solid var(--silver); }
 .level-gold  { border-left: 5px solid var(--gold); }
 
-.level-np:has(input:checked)    { border-left-color: var(--line);   border-color: var(--teal-700); }
-.level-bronze:has(input:checked){ border-left-color: #cd7f32;       border-color: var(--teal-700); }
-.level-silver:has(input:checked){ border-left-color: #8a9794;       border-color: var(--teal-700); }
-.level-gold:has(input:checked)  { border-left-color: var(--gold);   border-color: var(--teal-700); }
+.level-np:has(input:checked)    { border-left-color: var(--line); }
+.level-bronze:has(input:checked){ border-left-color: var(--bronze); }
+.level-silver:has(input:checked){ border-left-color: var(--silver); }
+.level-gold:has(input:checked)  { border-left-color: var(--gold); }
 
 /* ── Submit button ── */
 .submit-btn {
@@ -173,7 +176,7 @@
   width: 100%;
   padding: .85rem 1.5rem;
   background: var(--teal-900);
-  color: #fff;
+  color: var(--white);
   border: none;
   border-radius: .4rem;
   font: inherit;
@@ -194,10 +197,16 @@
 }
 
 /* ── Membership Level Cards ── */
+.membership-cards {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
 .membership-cards h2 {
   font-size: 1.5rem;
   color: var(--teal-900);
-  margin-bottom: 1.25rem;
+  margin-bottom: .25rem;
   padding-bottom: .5rem;
   border-bottom: 3px solid var(--gold);
 }
@@ -215,28 +224,24 @@
 }
 
 .mem-card {
-  background: #fff;
+  background: var(--white);
   border: 1px solid var(--line);
   border-radius: .6rem;
   border-top: 5px solid var(--line);
   padding: 1.25rem;
   display: grid;
   gap: .75rem;
-  /* Animation: applied via JS-added class to preserve prefers-reduced-motion */
-}
-
-.mem-card.animate {
   animation: cardSlideIn .5s ease both;
 }
 
-.mem-card.animate:nth-child(2) { animation-delay: .1s; }
-.mem-card.animate:nth-child(3) { animation-delay: .2s; }
-.mem-card.animate:nth-child(4) { animation-delay: .3s; }
-.mem-card.animate:nth-child(5) { animation-delay: .4s; }
+.mem-card:nth-child(2) { animation-delay: .1s; }
+.mem-card:nth-child(3) { animation-delay: .2s; }
+.mem-card:nth-child(4) { animation-delay: .3s; }
+.mem-card:nth-child(5) { animation-delay: .4s; }
 
 .mem-card--np     { border-top-color: var(--line); }
-.mem-card--bronze { border-top-color: #cd7f32; }
-.mem-card--silver { border-top-color: #8a9794; }
+.mem-card--bronze { border-top-color: var(--bronze); }
+.mem-card--silver { border-top-color: var(--silver); }
 .mem-card--gold   { border-top-color: var(--gold); }
 
 .mem-card__header {
@@ -262,7 +267,7 @@
 }
 
 .mem-card--gold .mem-card__price {
-  color: #7a5a0c; /* darkened for AA contrast (6.5:1 on white) */
+  color: var(--gold-dark); /* darkened for AA contrast (6.37:1 on white) */
 }
 
 .mem-card__tagline {
@@ -290,12 +295,13 @@
 
 .mem-card__link:hover {
   background: var(--teal-900);
-  color: #fff;
+  color: var(--white);
 }
 
 /* ── Modals ── */
 .benefit-modal {
-  position: relative; /* for absolute-positioned close button */
+  background: var(--white);
+  color: var(--ink);
   border: none;
   border-radius: .75rem;
   padding: 0;
@@ -305,8 +311,8 @@
   border-top: 6px solid var(--teal-900);
 }
 
-.benefit-modal--bronze { border-top-color: #cd7f32; }
-.benefit-modal--silver { border-top-color: #8a9794; }
+.benefit-modal--bronze { border-top-color: var(--bronze); }
+.benefit-modal--silver { border-top-color: var(--silver); }
 .benefit-modal--gold   { border-top-color: var(--gold); }
 
 .benefit-modal::backdrop {
@@ -314,6 +320,7 @@
 }
 
 .modal-inner {
+  position: relative; /* for absolute-positioned close button */
   padding: 1.5rem;
   display: grid;
   gap: .75rem;
@@ -324,7 +331,7 @@
   font-size: 1.35rem;
   color: var(--teal-900);
   margin: 0;
-  padding-right: 2rem; /* space for close button */
+  padding-right: 3rem; /* space for close button */
 }
 
 .modal-price {
@@ -348,17 +355,17 @@
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: .85rem;
+  right: .85rem;
   background: transparent;
   border: 2px solid var(--line);
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
   color: var(--muted);
@@ -375,7 +382,7 @@
   width: max-content;
   padding: .6rem 1.25rem;
   background: var(--teal-900);
-  color: #fff;
+  color: var(--white);
   border: none;
   border-radius: .4rem;
   font: inherit;
@@ -414,6 +421,10 @@
 .thankyou-summary {
   max-width: 40rem;
   margin-top: 1.5rem;
+}
+
+.thankyou-summary + .page-actions {
+  justify-content: center;
 }
 
 .summary-list {
@@ -472,7 +483,7 @@
 
 /* ── Respect reduced-motion preference ── */
 @media (prefers-reduced-motion: reduce) {
-  .mem-card.animate {
+  .mem-card {
     animation: none;
   }
 }
