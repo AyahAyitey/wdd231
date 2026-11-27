@@ -58,8 +58,7 @@
         <form
           id="membership-form"
           method="get"
-          action="thankyou.html"
-          novalidate>
+          action="thankyou.html">
 
           <h2>Application Form</h2>
 
@@ -97,7 +96,7 @@
               name="orgTitle"
               title="Your title within your organization (alpha, hyphens, spaces, minimum 7 characters)"
               autocomplete="organization-title"
-              pattern="[A-Za-z\- ]{7,}">
+              pattern="[A-Za-z -]{7,}">
           </label>
 
           <!-- Email -->
@@ -177,6 +176,7 @@
               id="description"
               name="description"
               title="Briefly describe your business or organization"
+              autocomplete="off"
               rows="4"></textarea>
           </label>
 
@@ -274,7 +274,7 @@
   <!-- NP Modal -->
   <dialog id="modal-np" class="benefit-modal" aria-labelledby="modal-np-title">
     <div class="modal-inner">
-      <button class="modal-close" aria-label="Close NP Membership benefits" data-close="modal-np">&times;</button>
+      <button type="button" class="modal-close" aria-label="Close NP Membership benefits" data-close="modal-np">&times;</button>
       <h2 id="modal-np-title">NP Membership Benefits</h2>
       <p class="modal-price">No Annual Fee</p>
       <ul>
@@ -284,14 +284,14 @@
         <li>Networking with local businesses and NGOs</li>
         <li>Use of Chamber meeting rooms (limited)</li>
       </ul>
-      <button class="modal-cta" data-close="modal-np">Close</button>
+      <button type="button" class="modal-cta" data-close="modal-np">Close</button>
     </div>
   </dialog>
 
   <!-- Bronze Modal -->
   <dialog id="modal-bronze" class="benefit-modal benefit-modal--bronze" aria-labelledby="modal-bronze-title">
     <div class="modal-inner">
-      <button class="modal-close" aria-label="Close Bronze Membership benefits" data-close="modal-bronze">&times;</button>
+      <button type="button" class="modal-close" aria-label="Close Bronze Membership benefits" data-close="modal-bronze">&times;</button>
       <h2 id="modal-bronze-title">Bronze Membership Benefits</h2>
       <p class="modal-price">GH&#8373; 500 / year</p>
       <ul>
@@ -302,14 +302,14 @@
         <li>Monthly business tips newsletter</li>
         <li>One free event ticket per quarter</li>
       </ul>
-      <button class="modal-cta" data-close="modal-bronze">Close</button>
+      <button type="button" class="modal-cta" data-close="modal-bronze">Close</button>
     </div>
   </dialog>
 
   <!-- Silver Modal -->
   <dialog id="modal-silver" class="benefit-modal benefit-modal--silver" aria-labelledby="modal-silver-title">
     <div class="modal-inner">
-      <button class="modal-close" aria-label="Close Silver Membership benefits" data-close="modal-silver">&times;</button>
+      <button type="button" class="modal-close" aria-label="Close Silver Membership benefits" data-close="modal-silver">&times;</button>
       <h2 id="modal-silver-title">Silver Membership Benefits</h2>
       <p class="modal-price">GH&#8373; 1,200 / year</p>
       <ul>
@@ -321,14 +321,14 @@
         <li>Quarterly one-on-one business advisory session</li>
         <li>Social media shoutout once per quarter</li>
       </ul>
-      <button class="modal-cta" data-close="modal-silver">Close</button>
+      <button type="button" class="modal-cta" data-close="modal-silver">Close</button>
     </div>
   </dialog>
 
   <!-- Gold Modal -->
   <dialog id="modal-gold" class="benefit-modal benefit-modal--gold" aria-labelledby="modal-gold-title">
     <div class="modal-inner">
-      <button class="modal-close" aria-label="Close Gold Membership benefits" data-close="modal-gold">&times;</button>
+      <button type="button" class="modal-close" aria-label="Close Gold Membership benefits" data-close="modal-gold">&times;</button>
       <h2 id="modal-gold-title">Gold Membership Benefits</h2>
       <p class="modal-price">GH&#8373; 2,500 / year</p>
       <ul>
@@ -341,7 +341,7 @@
         <li>Speaking opportunity at one Chamber event per year</li>
         <li>Exclusive invitation to Gold Member roundtable dinners</li>
       </ul>
-      <button class="modal-cta" data-close="modal-gold">Close</button>
+      <button type="button" class="modal-cta" data-close="modal-gold">Close</button>
     </div>
   </dialog>
 
